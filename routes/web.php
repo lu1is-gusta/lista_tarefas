@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\routeController;
+use App\Http\Controllers\TarefasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,4 @@ use App\Http\Controllers\routeController;
 |
 */
 
-Route::get('/', [routeController::class, 'index']); 
+Route::get('/', [TarefasController::class, 'index']); 
