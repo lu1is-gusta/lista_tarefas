@@ -12,4 +12,18 @@ class TarefasController extends Controller
 
         return view('index', ['tarefas'=>$tarefas]);
     }
+
+    public function create(){
+        return view('/create');
+    }
+
+    public function configCreate(Request $request){
+        if($request->filled('tarefa')){ //verifica se a tarefa tá preenchida, se tiver, retorna true
+            $tarefa = $request->input('tarefa');
+
+            DB::insert('INSERT INTO tb_tarefas (tarefa) VALUES (?)', [$tarefa]);
+        } 
+
+        return redirect()->route('pag.inicial');
+    }
 }

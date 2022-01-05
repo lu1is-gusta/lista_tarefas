@@ -5,7 +5,12 @@
 @section('titulo', 'Listagem de Tarefas') 
 
 @section('conteudo')
-    <h2>alguma coisa</h2>
+
+    <a href="{{ url('/create') }}">
+        <button>
+            Adicionar Tarefa
+        </button>
+    </a>
 
     <table class="table table-striped">
         <thead>
@@ -21,7 +26,7 @@
                 @foreach($tarefas as $tarefa)
                     <tr>
                         <th scope="row">{{$tarefa->id}}</th>
-                        <td>{{$tarefa->status}}</td>
+                        <td><a href=""> @if($tarefa->status === 1) Feito @else Pendente @endif </a></td>
                         <td>{{$tarefa->tarefa}}</td>
                         <td>
                             <a href="">
@@ -40,10 +45,6 @@
                 @endforeach
             @endif
         </tbody>
-    </table>
-
-       
-                
-            
+    </table>           
 
 @endsection

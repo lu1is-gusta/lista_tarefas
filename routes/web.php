@@ -14,4 +14,7 @@ use App\Http\Controllers\TarefasController;
 |
 */
 
-Route::get('/', [TarefasController::class, 'index']); 
+Route::get('/', [TarefasController::class, 'index'])->name('pag.inicial'); 
+
+Route::get('/create', [TarefasController::class, 'create']);
+Route::post('/create', [TarefasController::class, 'configCreate'])->name('add.tarefa');
