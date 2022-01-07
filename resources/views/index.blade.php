@@ -35,7 +35,7 @@
                                 </button>
                             </a>
 
-                            <a href="" style="text-decoration-line: none;">
+                            <a href="{{ url('/delete', ['id' => $tarefa->id]) }}" style="text-decoration-line: none;">
                                 <button>
                                     Apagar
                                 </button>

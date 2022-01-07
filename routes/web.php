@@ -21,3 +21,7 @@ Route::post('/create', [TarefasController::class, 'configCreate'])->name('add.ta
 
 Route::get('/update/{id}', [TarefasController::class, 'update']);
 Route::post('/update/{id}', [TarefasController::class, 'configUpdate'])->name('editar.tarefa');
+
+Route::get('/delete/{id}', [TarefasController::class, 'delete']);
+
+Route::get('/marcar/{id}', [TarefasController::class, 'marcar']);

@@ -45,4 +45,11 @@ class TarefasController extends Controller
 
         return redirect()->route('pag.inicial');
     }
+
+    public function delete($id){
+        DB::delete('delete from tb_tarefas where id = ?', [$id]);
+
+        return redirect()->route('pag.inicial');
+    }
+
 }
