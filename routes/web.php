@@ -18,3 +18,6 @@ Route::get('/', [TarefasController::class, 'index'])->name('pag.inicial');
 
 Route::get('/create', [TarefasController::class, 'create']);
 Route::post('/create', [TarefasController::class, 'configCreate'])->name('add.tarefa');
+
+Route::get('/update/{id}', [TarefasController::class, 'update']);
+Route::post('/update/{id}', [TarefasController::class, 'configUpdate'])->name('editar.tarefa');

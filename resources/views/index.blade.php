@@ -29,13 +29,13 @@
                         <td><a href=""> @if($tarefa->status === 1) Feito @else Pendente @endif </a></td>
                         <td>{{$tarefa->tarefa}}</td>
                         <td>
-                            <a href="">
+                            <a href="{{ url('/update', ['id' => $tarefa->id]) }}" style="text-decoration-line: none;"> <!--Retira o sublinhado-->
                                 <button>
                                     Editar
                                 </button>
                             </a>
 
-                            <a href="">
+                            <a href="" style="text-decoration-line: none;">
                                 <button>
                                     Apagar
                                 </button>
