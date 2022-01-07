@@ -52,4 +52,9 @@ class TarefasController extends Controller
         return redirect()->route('pag.inicial');
     }
 
+    public function marcar($id){       
+        DB::update('update tb_tarefas set status = 1 - status where id = ?', [$id]);
+
+        return redirect()->route('pag.inicial');
+    }
 }

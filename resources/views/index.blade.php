@@ -26,7 +26,7 @@
                 @foreach($tarefas as $tarefa)
                     <tr>
                         <th scope="row">{{$tarefa->id}}</th>
-                        <td><a href=""> @if($tarefa->status === 1) Feito @else Pendente @endif </a></td>
+                        <td><a href="{{ url('marcar', ['id' => $tarefa->id]) }}"> @if($tarefa->status === 1) Feito @else Pendente @endif </a></td>
                         <td>{{$tarefa->tarefa}}</td>
                         <td>
                             <a href="{{ url('/update', ['id' => $tarefa->id]) }}" style="text-decoration-line: none;"> <!--Retira o sublinhado-->
