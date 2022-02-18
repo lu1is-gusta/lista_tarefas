@@ -14,9 +14,9 @@ class CreateTarefasTable extends Migration
     public function up()
     {
         Schema::create('tarefas', function (Blueprint $table) {
-            $table->id();
-            $table->char('tarefa', 100);
-            $table->unsignedTinyInteger('status');
+            $table->increments('id');
+            $table->string('tarefa', 100);
+            $table->tinyInteger('status')->default(0);
         });
     }
 
