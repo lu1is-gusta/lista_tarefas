@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Tarefa;
 
 class TarefasController extends Controller
 {
     public function index(){
-        $tarefas = DB::select('select * from tb_tarefas');
+        $tarefas = Tarefa::all();
 
         return view('index', ['tarefas'=>$tarefas]);
     }
@@ -21,7 +22,11 @@ class TarefasController extends Controller
         if($request->filled('tarefa')){ //verifica se a tarefa tá preenchida, se tiver, retorna true
             $tarefa = $request->input('tarefa');
 
-            DB::insert('INSERT INTO tb_tarefas (tarefa) VALUES (?)', [$tarefa]);
+            //DB::insert('INSERT INTO tb_tarefas (tarefa) VALUES (?)', [$tarefa]);
+
+            $t = new Tarefa; //instância da classe do model "Tarefa"
+            $t->tarefa = $tarefa; 
+            $t->save();
         } 
 
         return redirect()->route('pag.inicial');

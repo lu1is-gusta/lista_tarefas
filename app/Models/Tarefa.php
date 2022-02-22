@@ -10,5 +10,5 @@ class Tarefa extends Model
     //use HasFactory;
 
     protected $table = 'tarefas';
-    protected $timestamps = false;
+    public $timestamps = false;
 }
