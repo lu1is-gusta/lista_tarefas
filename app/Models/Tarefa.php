@@ -10,6 +10,6 @@ class Tarefa extends Model
     //use HasFactory;
 
     protected $table = 'tarefas';
-    protected $fillable = ['tarefa'];
+    protected $fillable = ['tarefa']; //Colocar os dados que poderão ser alterados em massa
     public $timestamps = false;
 }

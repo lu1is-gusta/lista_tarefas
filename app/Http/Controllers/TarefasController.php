@@ -70,8 +70,15 @@ class TarefasController extends Controller
     }
 
     public function marcar($id){       
-        DB::update('update tb_tarefas set status = 1 - status where id = ?', [$id]);
+        //DB::update('update tb_tarefas set status = 1 - status where id = ?', [$id]);
 
+        $marcacao = Tarefa::find($id);
+
+        if($marcacao){
+            $marcacao->status = 1 - $marcacao->status;
+            $marcacao-save();
+        }    
+        
         return redirect()->route('pag.inicial');
     }
 }
