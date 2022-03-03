@@ -62,7 +62,9 @@ class TarefasController extends Controller
     }
 
     public function delete($id){
-        DB::delete('delete from tb_tarefas where id = ?', [$id]);
+        //DB::delete('delete from tb_tarefas where id = ?', [$id]);
+
+        Tarefa::find($id)->delete();
 
         return redirect()->route('pag.inicial');
     }
