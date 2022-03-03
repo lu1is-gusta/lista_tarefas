@@ -10,5 +10,6 @@ class Tarefa extends Model
     //use HasFactory;
 
     protected $table = 'tarefas';
+    protected $fillable = ['tarefa'];
     public $timestamps = false;
 }
