@@ -33,7 +33,9 @@ class TarefasController extends Controller
     }
 
     public function update($id){
-        $tarefas = DB::select('select * from tb_tarefas where id = ?', [$id]);
+        //$tarefas = DB::select('select * from tb_tarefas where id = ?', [$id]);
+
+        $tarefas = Tarefa::find($id);
 
         if(!empty($tarefas)){
             return view('update', ['tarefas' => $tarefas]);
@@ -45,8 +47,16 @@ class TarefasController extends Controller
 
     public function configUpdate(Request $request, $id){
         $tarefa = $request->input('tarefa');
+
+        //DB::update('update tb_tarefas set tarefa = ? where id = ?', [$tarefa, $id]);
         
-        DB::update('update tb_tarefas set tarefa = ? where id = ?', [$tarefa, $id]);
+        /*
+        $update = Tarefa::find($id);
+        $update->tarefa = $tarefa;
+        $update->save();
+        */
+        
+        Tarefa::find($id)->update(['tarefa'=>$tarefa]);
 
         return redirect()->route('pag.inicial');
     }
