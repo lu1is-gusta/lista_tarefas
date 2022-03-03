@@ -6,14 +6,12 @@
 
 @section('conteudo')
 
-      @foreach($tarefas as $tarefa) 
-      <form method="POST" action="{{ route('editar.tarefa', ['id' => $tarefa->id]) }}">
-        @csrf
+  <form method="POST" action="{{ route('editar.tarefa', ['id' => $tarefas->id]) }}">
+    @csrf
         
-        <label for="tarefa">Nova tarefa:</label>
-        <input type="text" name="tarefa" value="{{$tarefa->tarefa}}">
-        <input type="submit" value="Atualizar">        
-      </form>
-      @endforeach
+    <label for="tarefa">Nova tarefa:</label>
+    <input type="text" name="tarefa" value="{{$tarefas->tarefa}}">
+    <input type="submit" value="Atualizar">        
+  </form>
 
 @endsection

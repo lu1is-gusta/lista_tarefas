@@ -74,10 +74,10 @@ class TarefasController extends Controller
 
         $marcacao = Tarefa::find($id);
 
-        if($marcacao){
-            $marcacao->status = 1 - $marcacao->status;
-            $marcacao-save();
-        }    
+
+        $marcacao->status = 1 - $marcacao->status;
+        $marcacao->save();
+
         
         return redirect()->route('pag.inicial');
     }
