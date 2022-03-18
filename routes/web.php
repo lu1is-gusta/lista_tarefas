@@ -28,3 +28,7 @@ Route::post('/update/{id}', [TarefasController::class, 'configUpdate'])->name('e
 Route::get('/delete/{id}', [TarefasController::class, 'delete']);
 
 Route::get('/marcar/{id}', [TarefasController::class, 'marcar']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
