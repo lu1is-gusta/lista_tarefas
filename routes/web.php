@@ -13,11 +13,11 @@ use App\Http\Controllers\TarefasController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/login', function(){
+/*Route::get('/login', function(){
     echo 'teste';
-})->name('login'); 
+})->name('login'); */
 
-Route::get('/', [TarefasController::class, 'index'])->name('pag.inicial')->middleware('auth'); //middleware específico para autenticação. Vai procurar a rota 'login'  
+Route::get('/', [TarefasController::class, 'index'])->name('pag.inicial');//->middleware('auth'); //middleware específico para autenticação. Vai procurar a rota 'login'  
 
 Route::get('/create', [TarefasController::class, 'create']);
 Route::post('/create', [TarefasController::class, 'configCreate'])->name('add.tarefa');
