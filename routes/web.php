@@ -17,7 +17,7 @@ use App\Http\Controllers\TarefasController;
     echo 'teste';
 })->name('login'); */
 
-Route::get('/', [TarefasController::class, 'index'])->name('pag.inicial');//->middleware('auth'); //middleware específico para autenticação. Vai procurar a rota 'login'  
+Route::get('/', [TarefasController::class, 'index'])->name('pag.inicial')->middleware('auth'); //middleware específico para autenticação. Vai procurar a rota 'login. Só acessa essa rota se estiver logado'  
 
 Route::get('/create', [TarefasController::class, 'create']);
 Route::post('/create', [TarefasController::class, 'configCreate'])->name('add.tarefa');
