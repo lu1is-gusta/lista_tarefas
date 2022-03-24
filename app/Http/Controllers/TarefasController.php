@@ -8,6 +8,11 @@ use App\Models\Tarefa;
 
 class TarefasController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');  //middleware específico para autenticação. Vai procurar a rota 'login. Só acessa essa rota se estiver logado'
+    }
+
     public function index(){
         $tarefas = Tarefa::all();
 
